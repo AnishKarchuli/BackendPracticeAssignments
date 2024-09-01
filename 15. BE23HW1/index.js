@@ -1,4 +1,4 @@
-const { error } = require('console');
+require('dotenv').config();
 const { initializeDatabase } = require('./db/db.connect');
 
 const Restaurant = require('./models/restaurants.models');
@@ -139,7 +139,7 @@ async function updateRestaurant(restaurantId, dataToUpdate){
   }
 }
 
-// updateRestaurant("66c5e6fdfc23b3bda8589c8c", {rating: 4.1})
+// updateRestaurant("66d4acc399ca5a9f4df96c38", {rating: 4.1})
 
 // Problem 2
 

@@ -28,7 +28,7 @@ const newHotel = {
 };
 */
 
-/*
+
 const newHotel = {
   name: "Sunset Resort",
   category: "Resort",
@@ -49,8 +49,6 @@ const newHotel = {
   isRestaurantAvailable: true,
   photos: ["https://example.com/hotel2-photo1.jpg", "https://example.com/hotel2-photo2.jpg"],
 };
-
-*/
 
 async function createHotel(newHotel){
   try{

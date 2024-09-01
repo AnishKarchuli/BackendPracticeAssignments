@@ -4,7 +4,7 @@ const Movie = require("./models/movies.models");
 
 initializeDatabase();
 
-/*
+
 const newMovie = {
   title: "New Movie",
   releaseYear: 2023,
@@ -30,8 +30,8 @@ async function createMovie(newMovie){
   }
 }
 
-createMovie(newMovie)
-*/
+// createMovie(newMovie)
+
 
 // find a movie with a particulat title
 

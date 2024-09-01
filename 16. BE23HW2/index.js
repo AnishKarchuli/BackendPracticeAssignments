@@ -1,3 +1,4 @@
+require('dotenv').config();
 const {initializeDatabase} = require('./db/db.connect');
 
 const Hotel = require('./models/hotels.models');
@@ -152,7 +153,7 @@ async function readHotelByPhoneNumber(phoneNumber){
 
 // Problem 1
 
-async function updateHotel(hotelId, dataToUpdate){
+async function updateHotelById(hotelId, dataToUpdate){
   try{
     const updatedHotel = await Hotel.findByIdAndUpdate(hotelId, dataToUpdate, {new: true})
     console.log(updatedHotel)
@@ -161,11 +162,11 @@ async function updateHotel(hotelId, dataToUpdate){
   }
 }
 
-updateHotel("66d40879e9990c0f4728a08c", {checkOutTime: "11:00 AM"})
+// updateHotelById("66d4ad5655267e743133befd", {checkOutTime: "11:00 AM"})
 
 // Problem 2
 
-async function updateHotel(hotelName, dataToUpdate){
+async function updateHotelByName(hotelName, dataToUpdate){
   try{
     const updatedHotel = await Hotel.findOneAndUpdate({name: hotelName}, dataToUpdate, {new: true})
     console.log(updatedHotel)
@@ -174,11 +175,11 @@ async function updateHotel(hotelName, dataToUpdate){
   }
 }
 
-updateHotel("Sunset Resort", { rating: 4.2})
+// updateHotelByName("Sunset Resort", { rating: 4.2})
 
 // Problem 3
 
-async function updateHotel(hotelPhoneNumber, dataToUpdate){
+async function updateHotelByPhoneNumber(hotelPhoneNumber, dataToUpdate){
   try{
     const updatedHotel = await Hotel.findOneAndUpdate({phoneNumber: hotelPhoneNumber}, dataToUpdate, {new: true})
     console.log(updatedHotel)
@@ -187,4 +188,4 @@ async function updateHotel(hotelPhoneNumber, dataToUpdate){
   }
 }
 
-updateHotel("+1299655890", {phoneNumber: "+1997687392"})
+updateHotelByPhoneNumber("+1299655890", {phoneNumber: "+1997687392"})

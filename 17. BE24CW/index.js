@@ -97,7 +97,7 @@ async function updateMovie(movieId, dataToUpdate){
 
 // updateMovie("66d4a91a8985178bdee91296", {releaseYear: 2002})
 
-// find one data and update its releaseYear
+// find one data and update its value
 
 async function updateMovieDetail(movieTitle, dataToUpdate){
   try{
@@ -108,4 +108,27 @@ async function updateMovieDetail(movieTitle, dataToUpdate){
   }
 }
 
-updateMovieDetail("Kabhi Khushi Kabhie Gham", {releaseYear: 2001})
+// updateMovieDetail("Kabhi Khushi Kabhie Gham", {releaseYear: 2001})
+
+// find a movie by id and delete from the database
+
+async function deleteMovie(movieId){
+  try{
+    const deleteMovie = await Movie.findByIdAndDelete(movieId)
+  }catch{
+    console.log("Error in Deleting Movie", error)
+  }
+}
+
+// deleteMovie("66d4aacdbb323e4d3e35ae74")
+
+async function deleteMovieFromDb(movieTitle){
+  try{
+    const deletedMovie = await Movie.findOneAndDelete({title: movieTitle})
+    console.log("This movie was deleted:", deletedMovie)
+  }catch{
+    console.log("Error in movie deletion", error)
+  }
+}
+
+deleteMovieFromDb("3 Idiots")

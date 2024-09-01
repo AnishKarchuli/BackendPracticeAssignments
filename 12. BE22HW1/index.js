@@ -37,7 +37,7 @@ const newRestaurant = {
   isDeliveryAvailable: false,
   menuUrl: "https://yo-example.com/menu",
   photos: ["https://example.com/yo-photo1.jpg", "https://example.com/yo-photo2.jpg", "https://example.com/yo-photo3.jpg"]
-};
+}
 
 async function createRestaurant(newRestaurant){
   try{
