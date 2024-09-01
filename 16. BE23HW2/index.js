@@ -1,4 +1,3 @@
-require('dotenv').config();
 const {initializeDatabase} = require('./db/db.connect');
 
 const Hotel = require('./models/hotels.models');
@@ -28,7 +27,6 @@ const newHotel = {
 };
 */
 
-/*
 const newHotel = {
   name: "Sunset Resort",
   category: "Resort",
@@ -49,8 +47,6 @@ const newHotel = {
   isRestaurantAvailable: true,
   photos: ["https://example.com/hotel2-photo1.jpg", "https://example.com/hotel2-photo2.jpg"],
 };
-
-*/
 
 async function createHotel(newHotel){
   try{
@@ -152,4 +148,43 @@ async function readHotelByPhoneNumber(phoneNumber){
   }
 }
 
-readHotelByPhoneNumber('+1299655890')
+// readHotelByPhoneNumber('+1299655890')
+
+// Problem 1
+
+async function updateHotel(hotelId, dataToUpdate){
+  try{
+    const updatedHotel = await Hotel.findByIdAndUpdate(hotelId, dataToUpdate, {new: true})
+    console.log(updatedHotel)
+  } catch{
+    console.log("Error in updating hotel checkOutTime", error)
+  }
+}
+
+updateHotel("66d40879e9990c0f4728a08c", {checkOutTime: "11:00 AM"})
+
+// Problem 2
+
+async function updateHotel(hotelName, dataToUpdate){
+  try{
+    const updatedHotel = await Hotel.findOneAndUpdate({name: hotelName}, dataToUpdate, {new: true})
+    console.log(updatedHotel)
+  }catch{
+    console.log("Error in updating hotel name", error)
+  }
+}
+
+updateHotel("Sunset Resort", { rating: 4.2})
+
+// Problem 3
+
+async function updateHotel(hotelPhoneNumber, dataToUpdate){
+  try{
+    const updatedHotel = await Hotel.findOneAndUpdate({phoneNumber: hotelPhoneNumber}, dataToUpdate, {new: true})
+    console.log(updatedHotel)
+  }catch{
+    console.log("Error in updating hotel phone number", error)
+  }
+}
+
+updateHotel("+1299655890", {phoneNumber: "+1997687392"})
