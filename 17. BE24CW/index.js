@@ -77,7 +77,7 @@ async function updateMovie(movieId, dataToUpdate){
   try{
     const updatedMovie = await Movie.findByIdAndUpdate(movieId, dataToUpdate, {new: true})
     console.log(updatedMovie)
-  } catch {
+  } catch(error) {
     console.log("Error in updating movie rating", error)
   }
 }
@@ -90,7 +90,7 @@ async function updateMovie(movieId, dataToUpdate){
   try{
     const updatedMovie = await Movie.findByIdAndUpdate(movieId, dataToUpdate, {new: true})
     console.log(updatedMovie)
-  } catch {
+  } catch(error) {
     console.log("Error in updating movie rating", error)
   }
 }
@@ -115,7 +115,7 @@ async function updateMovieDetail(movieTitle, dataToUpdate){
 async function deleteMovie(movieId){
   try{
     const deleteMovie = await Movie.findByIdAndDelete(movieId)
-  }catch{
+  }catch(error){
     console.log("Error in Deleting Movie", error)
   }
 }
@@ -126,7 +126,7 @@ async function deleteMovieFromDb(movieTitle){
   try{
     const deletedMovie = await Movie.findOneAndDelete({title: movieTitle})
     console.log("This movie was deleted:", deletedMovie)
-  }catch{
+  }catch(error) {
     console.log("Error in movie deletion", error)
   }
 }
