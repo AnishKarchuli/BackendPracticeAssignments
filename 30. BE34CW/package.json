@@ -1,9 +1,9 @@
 {
   "dependencies": {
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "express": "^4.21.0"
   },
-  "name": "22.-be31hw1",
+  "name": "30.-be34cw",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
