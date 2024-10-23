@@ -1,9 +1,5 @@
 {
-  "dependencies": {
-    "dotenv": "^16.4.5",
-    "express": "^4.21.0"
-  },
-  "name": "29.-be33hw2",
+  "name": "36.-be41hw2",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -13,5 +9,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.7.2"
+  }
 }

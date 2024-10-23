@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const app = express();
 
-app.use(express.json())
+app.use(express.json())  //middleware
 
 const cars = [
     {id: 1, make: "Toyota", model: "Camry", year: 2022}
