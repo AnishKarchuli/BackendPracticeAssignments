@@ -105,6 +105,28 @@ app.get("/books/author/:authorName", async (req, res) => {
     }
 })
 
+async function deleteBook(bookId){
+    try{
+        const deletedBook = await Book.findByIdAndDelete(bookId)
+        return deletedBook
+    } catch(error){
+        console.log(error)
+    }
+}
+
+app.delete('/books/:bookId', async (req, res) => {
+    try{
+        const deletedBook = await deleteBook(req.params.bookId)
+        if(deletedBook){
+            res.status(200).json({message: 'Book deleted successfully.'})
+        } else {
+            res.status(404).json({error: 'Book not found.'})
+        }
+    }catch(error){
+        res.status(500).json({error: 'Failed to delete a book.'})
+    }
+})
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on PORT ${PORT}`)
